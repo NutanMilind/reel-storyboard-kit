@@ -1,40 +1,71 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reel Storyboard Kit — Offline Reel Planner</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Free offline-first Reel storyboard planner. Build editable manifestation and fashion storyboards from practical starter templates.">
+<title>Reel Storyboard Kit — Free Reel Planner</title>
 <style>
 :root{color-scheme:dark;--bg:#0c1121;--panel:#171f33;--panel2:#1d2842;--line:#35435d;--ink:#f5f5ff;--muted:#b4bfd7;--accent:#c3a7ff;--gold:#f4d199}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#252147,transparent 38%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-.wrap{max-width:1100px;margin:auto;padding:30px 18px 60px}header{padding:8px 0 25px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{letter-spacing:.05em;font-weight:800;color:var(--gold)}.status{color:var(--muted);font-size:.86rem}
-h1{font-size:clamp(1.9rem,5vw,3.4rem);margin:0 0 7px;letter-spacing:-.045em;line-height:1.07}.lead{color:var(--muted);margin:0 0 26px;max-width:700px}.layout{display:grid;grid-template-columns:minmax(290px,365px) minmax(0,1fr);gap:20px;align-items:start}
-.panel{border:1px solid var(--line);background:rgba(23,31,51,.94);border-radius:18px;padding:23px;box-shadow:0 16px 40px #0002}.panel h2{font-size:1.15rem;margin:0 0 18px}label{display:block;color:#e8e6fa;font-weight:650;font-size:.9rem;margin:16px 0 6px}
-input,select,textarea{width:100%;border:1px solid #526180;background:#0c1529;color:white;border-radius:10px;padding:11px 12px;font:inherit;outline-offset:3px}input:focus,select:focus,textarea:focus{outline:2px solid var(--accent)}textarea{min-height:84px;resize:vertical}.hint{font-size:.79rem;color:var(--muted);margin:4px 0 0}
-.btn{cursor:pointer;border:1px solid #6c7597;background:#283758;color:white;border-radius:11px;padding:11px 14px;font:700 .94rem system-ui;text-align:center}.primary{background:#d2b9ff;color:#18142c;border-color:#d2b9ff}.btn:hover{filter:brightness(1.12)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 0}.notice{font-size:.82rem;color:var(--muted);line-height:1.55;margin-top:18px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin:-5px 0 12px}.pill{border:1px solid var(--line);color:var(--muted);border-radius:100px;padding:4px 9px;font-size:.8rem}.scene{padding:16px 0;border-top:1px solid var(--line)}.scene:first-child{border-top:0}.scenehead{display:flex;justify-content:space-between;gap:10px;align-items:center}.scenehead b{color:var(--gold)}.clock{color:var(--accent);font-variant-numeric:tabular-nums;font-size:.82rem}.scene textarea{margin:6px 0 10px;min-height:72px}.subfield{font-size:.78rem;font-weight:750;letter-spacing:.09em;color:var(--muted);text-transform:uppercase}.placeholder{color:var(--muted);min-height:170px;display:flex;justify-content:center;align-items:center;text-align:center;padding:18px;border:1px dashed #526180;border-radius:12px}
-footer{color:var(--muted);font-size:.83rem;padding:32px 0 0}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 90% 0%,#252147,transparent 38%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:30px 18px 60px}
+header{padding:8px 0 25px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{letter-spacing:.05em;font-weight:800;color:var(--gold)}.status{color:var(--muted);font-size:.86rem}
+h1{font-size:clamp(1.9rem,5vw,3.4rem);margin:0 0 7px;letter-spacing:-.045em;line-height:1.07}
+.lead{color:var(--muted);margin:0 0 26px;max-width:720px}
+.layout{display:grid;grid-template-columns:minmax(290px,365px) minmax(0,1fr);gap:20px;align-items:start}
+.panel{border:1px solid var(--line);background:rgba(23,31,51,.94);border-radius:18px;padding:23px;box-shadow:0 16px 40px #0002}
+.panel h2{font-size:1.15rem;margin:0 0 18px}
+label{display:block;color:#e8e6fa;font-weight:650;font-size:.9rem;margin:16px 0 6px}
+input,select,textarea{width:100%;border:1px solid #526180;background:#0c1529;color:white;border-radius:10px;padding:11px 12px;font:inherit;outline-offset:3px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent)}textarea{min-height:84px;resize:vertical}
+.hint{font-size:.79rem;color:var(--muted);margin:4px 0 0}
+.btn{cursor:pointer;border:1px solid #6c7597;background:#283758;color:white;border-radius:11px;padding:11px 14px;font:700 .94rem system-ui;text-align:center}
+.btn:disabled{opacity:.46;cursor:not-allowed}.primary{background:#d2b9ff;color:#18142c;border-color:#d2b9ff}
+.btn:not(:disabled):hover{filter:brightness(1.12)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 0}
+.notice{font-size:.82rem;color:var(--muted);line-height:1.55;margin-top:18px}
+.template-box{background:var(--panel2);border:1px solid #556282;border-radius:14px;padding:14px;margin-bottom:23px}
+.template-box h3{margin:0 0 8px;color:var(--gold);font-size:1rem}
+.template-box label{margin:8px 0 5px}.template-box .actions{margin:10px 0 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:-5px 0 12px}.pill{border:1px solid var(--line);color:var(--muted);border-radius:100px;padding:4px 9px;font-size:.8rem}
+.scene{padding:16px 0;border-top:1px solid var(--line)}.scene:first-child{border-top:0}.scenehead{display:flex;justify-content:space-between;gap:10px;align-items:center}.scenehead b{color:var(--gold)}
+.clock{color:var(--accent);font-variant-numeric:tabular-nums;font-size:.82rem;white-space:nowrap}
+.scene textarea{margin:6px 0 10px;min-height:72px}.subfield{font-size:.78rem;font-weight:750;letter-spacing:.09em;color:var(--muted);text-transform:uppercase}
+.placeholder{color:var(--muted);min-height:170px;display:flex;justify-content:center;align-items:center;text-align:center;padding:18px;border:1px dashed #526180;border-radius:12px}
+footer{color:var(--muted);font-size:.83rem;padding:32px 0 0}
 @media(max-width:760px){.layout{grid-template-columns:1fr}.wrap{padding-top:15px}header{align-items:flex-start}.panel{padding:18px}}
 </style>
 </head>
 <body><div class="wrap">
 <header><span class="brand">✦ REEL STORYBOARD KIT</span><span class="status">Free · Offline · No account needed</span></header>
-<h1>Plan the Reel.<br>Own the story.</h1><p class="lead">An editable scene-by-scene storyboard for creators. Choose a format, adjust the script, and export a Markdown production brief. This is a planning tool—not an AI video generator.</p>
-<div class="layout"><section class="panel" aria-labelledby="setup"><h2 id="setup">01 / Reel setup</h2>
+<h1>Plan the Reel.<br>Own the story.</h1>
+<p class="lead">Start with a real example or build your own editable scene-by-scene storyboard. Export a Markdown production brief. This is a planning tool—not an AI video generator.</p>
+<div class="layout">
+<section class="panel" aria-labelledby="setup"><h2 id="setup">01 / Reel setup</h2>
+<div class="template-box"><h3>Ready-to-use examples</h3>
+<label for="template">Choose a sample storyboard</label>
+<select id="template"><option value="">Choose an example...</option><option value="manifestation">Manifestation — Universe Chat (30s)</option><option value="fashion">Fashion — Winter Outfit Reveal (10s)</option></select>
+<div class="actions"><button class="btn" id="load-template" type="button">Load example template</button></div>
+<p class="hint">Templates contain complete example scene scripts and visuals. Edit everything below after loading.</p></div>
 <label for="niche">Content niche</label><select id="niche"><option value="manifestation">Manifestation / mindset</option><option value="fashion">Fashion / product reveal</option></select>
-<label for="topic">Topic or product</label><input id="topic" maxlength="180" value="Seeing signs but taking no action" placeholder="e.g. Handling job rejection"><p class="hint">Type your own real-life topic or exact product description.</p>
+<label for="topic">Topic or product</label><input id="topic" maxlength="180" value="Seeing signs but taking no action" placeholder="e.g. Handling job rejection"><p class="hint">Type a real-life topic or an exact, verified product description.</p>
 <label for="format">Visual format</label><select id="format"><option value="universe-chat">Universe Chat — message bubbles</option><option value="whiteboard">Whiteboard — drawings appear in sync</option><option value="cosmos">Luminous Cosmos — particles and atmosphere</option><option value="paper">Paper Cutout — layered storytelling</option><option value="minimal">Minimal Motion — kinetic typography</option><option value="product">Product Reveal — hands and close-ups</option></select>
 <label for="duration">Duration</label><select id="duration"><option value="10">10 seconds</option><option value="20">20 seconds</option><option value="30" selected>30 seconds</option><option value="45">45 seconds</option></select>
 <label for="cta">Ending question / call to action</label><input id="cta" maxlength="180" value="What's one action you can take today?">
-<div class="actions"><button class="btn primary" id="build" type="button">Generate storyboard</button><button class="btn" id="reset" type="button">Reset example</button></div>
-<p class="notice">No social-media login, API keys, tracking, or network access. Exported scripts are suggestions. Verify all product facts and avoid promising guaranteed outcomes.</p>
-</section><section class="panel" aria-live="polite" aria-labelledby="output"><h2 id="output">02 / Editable storyboard</h2><div class="meta" id="meta"></div><div id="scenes"><div class="placeholder">Select your content and press <strong>&nbsp;Generate storyboard&nbsp;</strong> to begin.</div></div><div class="actions"><button class="btn primary" id="download" type="button" disabled>Download Markdown</button><button class="btn" id="copy" type="button" disabled>Copy brief</button></div><p id="feedback" class="hint" role="status"></p></section></div>
-<footer>Open-source starter project · Works locally in Chrome, Edge, or Firefox · Export a production brief to use with any editor or text-to-video tool.</footer>
+<div class="actions"><button class="btn primary" id="build" type="button">Generate custom storyboard</button><button class="btn" id="reset" type="button">Reset</button></div>
+<p class="notice">No social login, API keys, tracking, or network requests. These are planning drafts. Check timing against real audio; verify product claims before publishing. This app does not generate an MP4.</p>
+</section>
+<section class="panel" aria-live="polite" aria-labelledby="output"><h2 id="output">02 / Editable storyboard</h2><div class="meta" id="meta"></div><div id="scenes"><div class="placeholder">Load an example or click <strong>&nbsp;Generate custom storyboard&nbsp;</strong> to begin.</div></div><div class="actions"><button class="btn primary" id="download" type="button" disabled>Download Markdown</button><button class="btn" id="copy" type="button" disabled>Copy brief</button></div><p id="feedback" class="hint" role="status"></p></section>
+</div>
+<footer>Open-source Reel Storyboard Kit · Works locally in Firefox, Chrome or Edge · Production planning, not video rendering.</footer>
 </div>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const escapeText=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let current=[];
+let storyboardTitle='Custom Reel Storyboard';
 const descriptions={
  'universe-chat':'Animated conversation bubbles, quiet starfield, readable message timing, two distinct voices if narration is added.',
  'whiteboard':'Draw one simple doodle or arrow at a time. Sync reveals to spoken ideas; uncluttered off-white paper.',
@@ -43,24 +74,68 @@ const descriptions={
  'minimal':'Kinetic large type, editorial spacing and confident transitions, no rapid flashing.',
  'product':'Hands-only product close-ups, accurate garment color and texture, steady framing. Never invent unseen product details.'
 };
-function allocate(total,count){const shares=count===3?[.3,.4,.3]:count===4?[.2,.3,.3,.2]:[.16,.22,.24,.22,.16];let out=shares.map(n=>Math.floor(total*n));let remainder=total-out.reduce((a,b)=>a+b,0);for(let i=0;i<remainder;i++)out[i%count]++;return out;}
+const templates={
+ manifestation:{
+ title:'The 11:11 Reminder',niche:'manifestation',topic:'Seeing 11:11 but not applying for a new job',format:'universe-chat',duration:30,cta:'What is one real step you can take today?',
+ scenes:[
+ {title:'Opening hook',start:0,end:5,voiceover:'Human: “I keep seeing 11:11. Is that a sign?”',visual:'Vertical 9:16. Deep-purple starfield with a minimal messaging interface. The Human bubble slides in. Restrained gold particles; no embedded narration subtitles.'},
+ {title:'The question',start:5,end:11,voiceover:'Universe: “Maybe. But what goal are you avoiding?”',visual:'Vertical 9:16. A warm-gold Universe message bubble appears with a soft glow, over the exact same dark starfield. Hold long enough to read.'},
+ {title:'The real problem',start:11,end:17,voiceover:'Human: “I want a new job. I haven’t applied.”',visual:'Vertical 9:16. Human message slides in. A simple résumé icon fades in at the side; the mood is thoughtful, with gentle motion only.'},
+ {title:'Practical advice',start:17,end:24,voiceover:'Universe: “Then choose one role. Update your résumé and apply today.”',visual:'Vertical 9:16. Universe bubble and a minimal three-step checklist: Choose, Update, Apply. Soft gold accent, clean readable layout.'},
+ {title:'Final takeaway',start:24,end:30,voiceover:'Universe: “A sign doesn’t send applications. You do. Start today.”',visual:'Vertical 9:16. Final Universe message settles at the center. Slow particles and an understated fade out. Avoid claiming 11:11 predicts an outcome.'}
+ ]},
+ fashion:{
+ title:'Winter Outfit Reveal',niche:'fashion',topic:'Striped sweater, wide-leg jeans and white sneakers',format:'product',duration:10,cta:'Which piece would you style differently?',
+ scenes:[
+ {title:'Sweater reveal',start:0,end:2,voiceover:'No voiceover. Hands reveal the exact striped sweater.',visual:'Vertical 9:16. Hands only, no face. On a glossy brown wooden-panel surface, gently unfold the referenced cream-and-black striped sweater. Match the actual knit, stripes and sleeves.'},
+ {title:'Jeans reveal',start:2,end:4,voiceover:'No voiceover. Hands reveal the jeans.',visual:'Vertical 9:16. Hands show the referenced light-blue wide-leg jeans against the same wooden surface. Keep the original waistband and cut accurate.'},
+ {title:'Sneakers reveal',start:4,end:6,voiceover:'No voiceover. Hands reveal the sneakers.',visual:'Vertical 9:16. Hands display the exact referenced white sneakers, preserving their laces, outsole and silhouette. Same background, steady camera.'},
+ {title:'Full outfit mirror selfie',start:6,end:10,voiceover:'No voiceover. Reveal the complete outfit.',visual:'Vertical 9:16. Adult model wearing the same three verified items in one fixed full-length mirror-selfie shot. Cozy room with olive-green accent wall; phone covers face. Natural posture. No extra garments or fabricated details.'}
+ ]}
+};
+function allocate(total,count){
+ const shares=count===3?[.3,.4,.3]:count===4?[.2,.3,.3,.2]:[.16,.22,.24,.22,.16];
+ let out=shares.map(n=>Math.floor(total*n));let remainder=total-out.reduce((a,b)=>a+b,0);
+ for(let i=0;i<remainder;i++)out[i%count]++;
+ return out;
+}
+function render(){
+ $('meta').replaceChildren();
+ const meta=[storyboardTitle,$('niche').value==='manifestation'?'Manifestation':'Fashion',`${$('duration').value} seconds`,`${current.length} scenes`,'9:16 vertical'];
+ meta.forEach(x=>{let s=document.createElement('span');s.className='pill';s.textContent=x;$('meta').append(s)});
+ $('scenes').innerHTML=current.map((s,i)=>`<article class="scene"><div class="scenehead"><b>Scene ${i+1} · ${escapeText(s.title)}</b><span class="clock">${s.start}s – ${s.end}s</span></div><label class="subfield" for="voice-${i}">Voiceover / on-screen message</label><textarea id="voice-${i}" data-idx="${i}" data-prop="voiceover">${escapeText(s.voiceover)}</textarea><label class="subfield" for="visual-${i}">Visual prompt</label><textarea id="visual-${i}" data-idx="${i}" data-prop="visual">${escapeText(s.visual)}</textarea></article>`).join('');
+ document.querySelectorAll('[data-prop]').forEach(el=>el.addEventListener('input',e=>{const t=e.currentTarget;current[Number(t.dataset.idx)][t.dataset.prop]=t.value;}));
+ $('copy').disabled=false;$('download').disabled=false;
+}
 function produce(){
  const niche=$('niche').value,topic=$('topic').value.trim()||'(insert your topic)',format=$('format').value,duration=Number($('duration').value),cta=$('cta').value.trim()||'What would you try next?';
  const count=duration===10?3:duration===20?4:5;
  const parts=niche==='manifestation'?
- [ ['Hook',`What if “${topic}” is the moment to change your next action?`], ['Relatable situation',`Imagine someone facing this: ${topic}. They keep hoping, but nothing changes in their routine.`], ['The tension',`A positive thought can feel helpful, but a thought alone does not do the work.`], ['Practical shift',`Choose one small, observable step you can take today; write it down and give it a deadline.`], ['Takeaway',cta] ]:
- [ ['Hook',`Here's a closer look at: ${topic}.`], ['Product details',`Show the exact item, color and material as provided. Avoid unverified quality, price or rating claims.`], ['Real use case',`Show how the item can be styled or used without changing its design or fit.`], ['Clear reveal',`Show one complete steady view, then a single useful detail or styling angle.`], ['CTA',cta] ];
- const indices=count===3?[0,3,4]:count===4?[0,1,3,4]:[0,1,2,3,4];const times=allocate(duration,count);let at=0;
- current=indices.map((idx,i)=>{const [title,script]=parts[idx];const start=at;at+=times[i];return {title,start,end:at,voiceover:script,visual:`${descriptions[format]} Scene focus: ${title.toLowerCase()}; topic: ${topic}. Vertical 9:16, 1080×1920 composition, no logos or watermarks.`};});
- $('meta').innerHTML=`<span class="pill">${niche==='manifestation'?'Manifestation':'Fashion'}</span><span class="pill">${duration} seconds</span><span class="pill">${count} scenes</span><span class="pill">9:16 vertical</span>`;
- $('scenes').innerHTML=current.map((s,i)=>`<article class="scene"><div class="scenehead"><b>Scene ${i+1} · ${escapeText(s.title)}</b><span class="clock">${s.start}s – ${s.end}s</span></div><label class="subfield" for="voice-${i}">Voiceover / on-screen message</label><textarea id="voice-${i}" data-idx="${i}" data-prop="voiceover">${escapeText(s.voiceover)}</textarea><label class="subfield" for="visual-${i}">Visual prompt</label><textarea id="visual-${i}" data-idx="${i}" data-prop="visual">${escapeText(s.visual)}</textarea></article>`).join('');
- document.querySelectorAll('[data-prop]').forEach(el=>el.addEventListener('input',e=>{const target=e.currentTarget;current[Number(target.dataset.idx)][target.dataset.prop]=target.value;}));
- $('copy').disabled=false;$('download').disabled=false;$('feedback').textContent='Storyboard ready. Edit any scene before exporting.';
+ [ ['Hook',`What if “${topic}” is your reminder to take action?`], ['Relatable situation',`Imagine someone experiencing this: ${topic}. They keep hoping, but their routine stays the same.`], ['The tension','A positive thought can feel helpful, but a thought alone does not do the work.'], ['Practical shift','Choose one small, observable step to take today. Write it down and set a deadline.'], ['Takeaway',cta] ]:
+ [ ['Hook',`A closer look at: ${topic}.`], ['Product details','Show the exact item and its verified color and design. Do not invent a material, price, rating or discount.'], ['Styling','Show a practical styling option without changing the original product.'], ['Full reveal','Hold one steady, complete view of the product or outfit.'], ['CTA',cta] ];
+ const indices=count===3?[0,3,4]:count===4?[0,1,3,4]:[0,1,2,3,4],times=allocate(duration,count);let at=0;
+ current=indices.map((idx,i)=>{const [title,voiceover]=parts[idx],start=at;at+=times[i];return {title,start,end:at,voiceover,visual:`${descriptions[format]} Scene focus: ${title.toLowerCase()}; topic: ${topic}. Vertical 9:16 composition. No added logos or watermark.`};});
+ storyboardTitle='Custom Reel Storyboard';$('template').value='';render();$('feedback').textContent='Custom storyboard ready. Adjust the wording to fit recorded audio before exporting.';
 }
-function brief(){if(!current.length)return'';const lines=['# Reel Storyboard','',`- Niche: ${$('niche').selectedOptions[0].text}` ,`- Topic: ${$('topic').value.trim()||'(not provided)'}`,`- Visual format: ${$('format').selectedOptions[0].text}`,`- Duration: ${$('duration').value} seconds`,'- Frame: 9:16 (1080x1920)','','> Planning draft only. Confirm facts and adjust timing against the final voice recording.',''];current.forEach((s,i)=>{lines.push(`## Scene ${i+1}: ${s.title} (${s.start}–${s.end}s)`,'', '**Voice / message**',s.voiceover,'','**Visual prompt**',s.visual,'');});return lines.join('\n');}
-$('build').addEventListener('click',produce);$('reset').addEventListener('click',()=>{$('niche').value='manifestation';$('topic').value='Seeing signs but taking no action';$('format').value='universe-chat';$('duration').value='30';$('cta').value="What's one action you can take today?";produce();});
+function loadExample(){
+ const key=$('template').value,example=templates[key];
+ if(!example){$('feedback').textContent='Choose an example template first.';return;}
+ ['niche','topic','format','duration','cta'].forEach(k=>{$(k).value=String(example[k])});
+ storyboardTitle=example.title;current=example.scenes.map(scene=>({...scene}));render();
+ $('feedback').textContent=`Loaded “${example.title}”. Every scene is editable; verified product images are still required for fashion video production.`;
+}
+function brief(){
+ if(!current.length)return'';
+ const lines=[`# ${storyboardTitle}`,'',`- Niche: ${$('niche').selectedOptions[0].text}`,`- Topic: ${$('topic').value.trim()||'(not provided)'}`,`- Visual format: ${$('format').selectedOptions[0].text}`,`- Duration: ${$('duration').value} seconds`,'- Frame: 9:16 (1080x1920)','','> Production planning only. Confirm source product details and measure final voice audio before recording or rendering.',''];
+ current.forEach((s,i)=>{lines.push(`## Scene ${i+1}: ${s.title} (${s.start}–${s.end}s)`,'','**Voice / message**',s.voiceover,'','**Visual prompt**',s.visual,'')});
+ lines.push('## Closing question / CTA','',$('cta').value.trim()||'(not supplied)','');
+ return lines.join('\n');
+}
+$('load-template').addEventListener('click',loadExample);
+$('build').addEventListener('click',produce);
+$('reset').addEventListener('click',()=>{$('niche').value='manifestation';$('topic').value='Seeing signs but taking no action';$('format').value='universe-chat';$('duration').value='30';$('cta').value="What's one action you can take today?";produce();});
 $('download').addEventListener('click',()=>{const blob=new Blob([brief()],{type:'text/markdown;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='reel-storyboard.md';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);$('feedback').textContent='Markdown download started.';});
-$('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(brief());$('feedback').textContent='Copied the production brief.';}catch(e){$('feedback').textContent='Clipboard blocked by browser. Use Download Markdown instead.';}});
+$('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(brief());$('feedback').textContent='Copied the production brief.';}catch(e){$('feedback').textContent='Clipboard blocked. Use Download Markdown instead.';}});
 produce();
 </script>
 </body></html>
